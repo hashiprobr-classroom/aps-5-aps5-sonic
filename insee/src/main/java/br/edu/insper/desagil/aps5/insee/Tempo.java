@@ -23,12 +23,16 @@ public class Tempo extends Referencia {
             this.hora = 0;
         } else if (hora > 23) {
             this.hora = 23;
+        } else {
+            this.hora = hora;
         }
 
         if (minuto < 0) {
             this.minuto = 0;
         } else if (minuto > 59) {
             this.minuto = 59;
+        } else {
+            this.minuto = minuto;
         }
     }
 

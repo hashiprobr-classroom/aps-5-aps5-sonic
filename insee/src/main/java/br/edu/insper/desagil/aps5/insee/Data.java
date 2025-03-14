@@ -42,40 +42,28 @@ public class Data extends Referencia {
         return dia;
     }
 
-    public void setAno(int ano) {
-        this.ano = ano;
-    }
-
-    public void setMes(int mes) {
-        this.mes = mes;
-    }
-
-    public void setDia(int dia) {
-        this.dia = dia;
-    }
-
     public void atualiza(int ano, int mes, int dia) {
 
         if (ano < 1970) {
-            setAno(1970);
+            this.ano = 1970;
         } else {
-            setAno(ano);
+            this.ano = ano;
         }
 
         if (mes < 1) {
-            setMes(1);
+            this.mes = 1;
         } else if (mes > 12) {
-            setMes(12);
+            this.mes = 12;
         } else {
-            setMes(mes);
+            this.mes = mes;
         }
 
         if (dia < 1) {
-            setDia(1);
-        } else if (dia > limites.get(mes)){
-            setDia(limites.get(mes));
+            this.dia = 1;
+        } else if (dia > limites.get(this.mes)){
+            this.dia = limites.get(this.mes);
         } else {
-            setDia(dia);
+            this.dia = dia;
         }
     }
 
@@ -84,6 +72,7 @@ public class Data extends Referencia {
         int diasPassados = 0;
 
         int anos = ano - 1970; // Números de anos que passaram
+        diasPassados += anos * 365;
 
         for (int i = 1; i < mes; i++) {
             diasPassados += limites.get(i);
