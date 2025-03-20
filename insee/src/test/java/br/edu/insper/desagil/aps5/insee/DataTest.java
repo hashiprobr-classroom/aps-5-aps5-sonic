@@ -58,4 +58,5 @@ public class DataTest {
         data.atualiza(26, 9, 2024);
         assertEquals(19978, data.comoInteiro());
     }
+
 }
